@@ -164,6 +164,7 @@ public class SphinxManager : MonoBehaviour
     private void SetupMicrophone()
     {
         mic = new MicrophoneHandler(Microphone.devices[0], MicrophoneHandler.SamplingRateEnum.SixteenK, maxRecordingTime);
+        print(mic.Name);
         mic.RecordingFinished += ProcessAudio;
     }
     private void SetupDecoderKWS()
@@ -172,8 +173,9 @@ public class SphinxManager : MonoBehaviour
 
         string speechDataPath = Path.Combine(Application.persistentDataPath, lang.ToString("g"));
         string dictPath = Path.Combine(Application.temporaryCachePath, customDictFile);
+        //string dictPath = Path.Combine(Application.persistentDataPath, customDictFile);
         string keyphrasePath = Path.Combine(Application.temporaryCachePath, keywordsFile);
-
+        
         Config c = Decoder.DefaultConfig();
 
         c.SetString("-hmm", speechDataPath);
@@ -260,7 +262,8 @@ public class SphinxManager : MonoBehaviour
                 string assetTargetPath = Path.Combine(targetPath, correctAssetName);
                 www = UnityEngine.Networking.UnityWebRequest.Get(assetSourcePath);
                 yield return www.SendWebRequest();
-                File.WriteAllBytes(assetTargetPath, www.downloadHandler.data);
+                if(www.downloadHandler.data != null)
+                    File.WriteAllBytes(assetTargetPath, www.downloadHandler.data);
             }
         }
         else
