@@ -195,7 +195,7 @@ public class SphinxManager : MonoBehaviour
 
         string speechDataPath = Path.Combine(Application.persistentDataPath, lang.ToString("g"));
         string dictPath = Path.Combine(speechDataPath, lang + ".dic");
-        string lmPath = Path.Combine(speechDataPath, lang + ".lm.bin");
+        string lmPath = Path.Combine(speechDataPath, lang + ".lm");
 
         Config c = Decoder.DefaultConfig();
         c.SetString("-hmm", speechDataPath);
@@ -206,6 +206,7 @@ public class SphinxManager : MonoBehaviour
         d.SetLmFile("lm", lmPath);
         d.SetSearch("lm");
         d.StartUtt();
+        ready = true;
 
         if (debugMode) Debug.Log("<color=green><b>Decoder initialized!</b></color>");
     }

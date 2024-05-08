@@ -374,17 +374,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0b8e9ba89b489c4e98447a1464f0d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lang: 1
   mode: 0
-  maxRecordingTime: 2
-  minRecordingTime: 1
-  micLoudnessTreshold: -30
-  kwsThreshold: 1e-20
+  maxRecordingTime: 1
+  minRecordingTime: 0.5
+  micLoudnessTreshold: -45
+  kwsThreshold: 0.0000000000000001
   debugMode: 0
 --- !u!1 &410087039
 GameObject:
@@ -567,6 +567,7 @@ GameObject:
   - component: {fileID: 983520588}
   - component: {fileID: 983520587}
   - component: {fileID: 983520586}
+  - component: {fileID: 983520592}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -608,7 +609,7 @@ MonoBehaviour:
   - Word: "\u043E\u0433\u043E\u043D\u044C"
     Trancription: a g oo nn
   - Word: "\u0432\u043E\u0434\u0430"
-    Trancription: v oo d ay
+    Trancription: v a d ay
   - Word: "\u043C\u043E\u043B\u043D\u0438\u044F"
     Trancription: m oo l nn i i
 --- !u!136 &983520588
@@ -699,6 +700,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &983520592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983520585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3974e835b7d4f408b5195b89d38d9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1151771766
 GameObject:
   m_ObjectHideFlags: 0
